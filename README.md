@@ -7,11 +7,11 @@ My Surface Pro 7 i7 gets very hot, which both makes the device uncomfortable to 
 ## My Solution
 A shell script (I use zsh, should work in bash) to run as a service in the background which controls the max CPU frequency, energy performance preference, and powercap/rapl to ensure the case remains at comfortable or at least bearable temperatures to hold, while also preventing the device from overheating and causing aggressive throttling.
 
-It also takes over low power mode for battery, switching to low power settings (platform profile, energy performance preference, energy performance bias), and also features a Low Power + Fan mode to keep the device as cool as possible (I find this particularly valuable when charging) that can be toggled without a password. This Low Power + Fan Mode is the same as the Low Power Mode used for battery, except the platform profile is set to performance for maximum fan aggressiveness.
+It also initiates a low power mode when on battery, switching to low power settings (platform profile, energy performance preference, energy performance bias), and also features a Low Power + Fan mode to keep the device as cool as possible (I find this particularly valuable when charging) that can be toggled without a password. This Low Power + Fan Mode is the same as the Low Power Mode used for battery, except the platform profile is set to performance for maximum fan aggressiveness.
+
+When the screen is locked, it switches to a lower-power energy performance preference (by default set to "lowEPP" or balance_power). In a future version I might add some sort of "Performance Lock" power mode to lock the device without going into a medium power mode.
 
 Platform profile is only set when the state is changed – either when Low Power + Fan mode is activated, screen is locked, or charger is plugged/unplugged – which means if you want to manually control the fan level at any time you can use `surface profile set <x>` to temporarily set the fan aggressiveness until the state is changed again. Fore example, `surface profile set power` for a quiet mode. Use `surface profile list` to see options.
-
-It switches to a lower-power energy performance preference (by default set to "lowEPP" or balance_power) when the screen is locked. In a future version I might add some sort of "Performance Lock" power mode to lock the device without going into a medium power mode.
 
 ### How it Works
 A curve is defined which associates the max CPU core temperature with a max CPU clock speed. Two curve shapes are provided, linear and parabola, although having used the script for some time I definitely find linear better since it allows the CPU to remain at its best performance settings more of the time and only throttles when needed. I have a [desmos graph I use to help visualise the curve](https://www.desmos.com/calculator/a0qz23f2kj).
