@@ -51,9 +51,11 @@ Requires root priveliges.
 ## Notes and Compatibility
 For zsh shell, shouldn't have any issues with bash.
 
-**Please read through the script before use and modify for your device, distro and preferences**. It has only been tested on my device and is designed for my narrow use-case. If your Surface device has for example a different number of cores, you may need to alter the script. There are options you might want to tweak, and it is important to check that the paths in the Basic Definitions section are valid on your device.
+**Please read through the script before use and modify for your device, distro and preferences**. It has only been tested on my device, NixOS and KDE Plasma 6, and is designed for my narrow use-case. If your Surface device has for example a different number of cores, you may need to alter the script. There are options you might want to tweak, and it is important to check that the paths in the Basic Definitions section are valid on your device.
 
-I have tried to make the script easy to adapt but I am just sharing my solution, I'm not going to troubleshoot for your device.
+Locked screen detection will only work if your desktop environment uses loginctl, and I have only tested it on KDE Plasma 6 and NixOS. It should work if you use systemd I think, but I don't know. Not sure what errors the script will produce if you don't use loginctl. You should be able to replace the sections marked as   `# Check if Locked #` with something that works for you.
+
+I have tried to make the script easy to adapt but I am just sharing my solution.
 
 ## Getting Low Power + Fan Mode to work
 Make sure to input the directory and filename (in the Basic Definitions section of the script) of the file in your home folder which tracks low power fan mode. You may get errors if you don't, even if you don't need the feature.
