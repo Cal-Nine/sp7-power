@@ -160,7 +160,8 @@ while true; do
 
 
 
-  # Set Platform Profile
+  # Set Platform Profile #
+  
   if [[ "$onBattery" != "$previousBattery" ]] || [[ "$lowPowerFan" != "$prevLowPowerFan" ]]; then 
     if [[ "$lowPowerFan" != "yes" ]]; then
       echo "$platformProfile" | tee $platformProfileFile
@@ -338,6 +339,7 @@ while true; do
 
 
   # Set EPP #
+  
   echo "EPP:"
   if [[ "$lowPowerFan" = "yes" ]] || [[ "$onBattery" = "yes" ]]; then
     echo "$floorEPP" | tee $EPPWrite
