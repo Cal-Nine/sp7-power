@@ -49,9 +49,9 @@ Not compatible with power-profiles-daemon, the daemon your desktop environment l
 Requires root priveliges.
 
 ## Notes and Compatibility
-For zsh shell, shouldn't have any issues with bash.
+Script is for zsh shell, shouldn't have any issues with bash.
 
-**Please read through the script before use and modify for your device, distro and preferences**. It has only been tested on my device, NixOS and KDE Plasma 6, and is designed for my narrow use-case. There are options you might want to tweak, and it is important to check that the paths in the Basic Definitions section are valid on your device. I have tried to make the script easy to adapt but I am just sharing my solution.
+**Please read through the script before use and modify for your device, distro and preferences**. It has only been tested on my device, NixOS and KDE Plasma 6, and is designed for my narrow use-case. There are options you might want to tweak, and it is important to check that the paths in the Basic Definitions section are valid on your device. I have tried to make the script easy to adapt but I am just sharing my solution, it won't automatically work.
 
 **If your Surface device has more or less than 4 cores**, you will need to alter the script to check the temperature for that amount of cores. 
 
