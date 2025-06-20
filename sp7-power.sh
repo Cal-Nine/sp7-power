@@ -11,6 +11,8 @@ sleep 5
 
 # Basic Definitions #
 
+admin=user # Owner of files to which Power Mode states are written
+
 lowPowerFanDir= # Directory in which you'd like the file that tracks Low Power + Fan Mode to reside. Do not include slash at the end.
 lowPowerFanFile= # Filename of file that tracks Low Power + Fan Mode
 
@@ -103,6 +105,7 @@ powercap-set intel-rapl -z 0 -c 0 -l $powercapMicrowatts -s $powercapMicrosecond
 powercap-set intel-rapl-mmio -z 0 -c 0 -l $powercapMicrowatts -s $powercapMicroseconds
 mkdir -p $lowPowerFanDir
 echo "no" | tee $lowPowerFanDir/$lowPowerFanFile
+chown $admin $lowPowerFanDir/$lowPowerFanFile
 
 if [[ "$initClock" = "currentClock" ]]; then
   currentClock=$(cat $maxFreqRead)
