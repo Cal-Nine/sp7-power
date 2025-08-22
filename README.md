@@ -5,7 +5,7 @@ Microsoft Surface Pro 7 Energy and Thermal Management Script for Linux.
 My Surface Pro 7 i7 gets very hot, which both makes the device uncomfortable to use handheld, and occasionally results in the CPU being aggressively throttled to 200MHz, half the usual lowest clock speed, making it unusable.
 
 ## My Solution
-A shell script (I use zsh, should work in bash) to run as a service in the background which controls the max CPU frequency, energy performance preference, and powercap/rapl to ensure the case remains at comfortable or at least bearable temperatures to hold, while also preventing the device from overheating and causing aggressive throttling.
+A bash script to run as a service in the background which controls the max CPU frequency, energy performance preference, and powercap/rapl to ensure the case remains at comfortable or at least bearable temperatures to hold, while also preventing the device from overheating and causing aggressive throttling.
 
 It also initiates a low power mode when on battery, switching to low power settings (platform profile, energy performance preference, energy performance bias), and also features a Low Power + Fan mode to keep the device as cool as possible (I find this particularly valuable when charging) that can be toggled without a password. This Low Power + Fan Mode is the same as the Low Power Mode used for battery, except the platform profile is set to performance for maximum fan aggressiveness.
 
