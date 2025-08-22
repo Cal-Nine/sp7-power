@@ -174,7 +174,7 @@ while true; do
         echo "$platformProfile" | tee $platformProfileFile
         echo "Switching off Low Power Fan Mode, switching to Performance Power Mode"
       else
-        echo "power" | tee $platformProfileFile
+        echo "low-power" | tee $platformProfileFile
         echo "Switching off Low Power Fan Mode, switching to Low Power Mode"
       fi
     fi
@@ -189,7 +189,7 @@ while true; do
         echo "$platformProfile" | tee $platformProfileFile
         echo "Switching to Performance Power Mode"
       else
-        echo "power" | tee $platformProfileFile
+        echo "low-power" | tee $platformProfileFile
         echo "Switching to Low Power Mode"
       fi
     fi
