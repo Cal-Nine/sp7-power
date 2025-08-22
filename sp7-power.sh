@@ -166,7 +166,7 @@ while true; do
   # Set Platform Profile and reset Low Power Fan Mode when switching to/from battery power #
 
   if [[ "$lowPowerFan" != "$prevLowPowerFan" ]]; then 
-    if [[ "$lowPowerFan" != "yes" ]]; then
+    if [[ "$lowPowerFan" = "yes" ]]; then
       echo "$platformProfile" | tee $platformProfileFile
       echo "Switching to Low Power Fan Mode"
     else
